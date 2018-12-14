@@ -1,3 +1,6 @@
+require './lib/batter.rb'
+require './lib/topping.rb'
+
 class Item
   attr_reader :id,
               :type,
@@ -14,5 +17,26 @@ class Item
     @batters = []
     @toppings = []
   end
+
+  def load_batters(batter_data)
+    batter_data.map do |batter|
+      batter = Batter.new({
+        id: batter["id"],
+        type: batter["type"]
+      })
+      @batters << batter
+    end
+  end
+
+  def load_toppings(topping_data)
+    topping_data.map do |topping|
+      topping = Topping.new({
+        id: topping["id"],
+        type: topping["type"]
+      })
+      @toppings << topping
+    end
+  end
+
 
 end
