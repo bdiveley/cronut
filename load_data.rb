@@ -19,5 +19,3 @@ data.map do |item|
 
     all_items << item_obj
 end
-
-binding.pry
