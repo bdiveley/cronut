@@ -1,9 +1,4 @@
-class Batter
-  attr_reader :id, :type
+require './lib/item_stuff'
 
-  def initialize(data)
-    @id = data[:id]
-    @type = data[:type]
-  end
-
+class Batter < ItemStuff
 end
